@@ -37,7 +37,6 @@ public class Day1 extends Day {
     @Override
     public String getAnswerPartTwo() throws Exception {
         int partTwo = OwnReader.getReaderFromPath("day01.txt").lines()
-                .peek(s -> System.out.println(s))
                 .map(s -> {
 
                     firstNumberLoop:
