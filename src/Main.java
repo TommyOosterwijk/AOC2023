@@ -13,5 +13,17 @@ class Main {
         day2.getAnswerPartOne();
         day2.getAnswerPartTwo();
 
+
+        Day3 day3 = new Day3();
+        day3.getAnswerPartOne();
+        day3.getAnswerPartTwo();
+
+        Day4 day4 = new Day4();
+        day4.getAnswerPartOne();
+        day4.getAnswerPartTwo();
+
+        Day5 day5 = new Day5();
+        day5.getAnswerPartOne();
+        //day5.getAnswerPartTwo();
     }
 }
