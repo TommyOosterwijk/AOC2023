@@ -33,5 +33,9 @@ class Main {
         Day7 day7 = new Day7();
         day7.getAnswerPartOne();
         day7.getAnswerPartTwo();
+
+        Day8 day8 = new Day8();
+        day8.getAnswerPartOne();
+        day8.getAnswerPartTwo();
     }
 }
