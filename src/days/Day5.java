@@ -2,14 +2,10 @@ package days;
 
 import Utils.OwnReader;
 
-import javax.sound.sampled.Line;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import java.util.stream.LongStream;
 
 public class Day5 extends Day {
 
@@ -99,15 +95,20 @@ public class Day5 extends Day {
         for(int i = 0; i< seeds.size(); i+=2) {
             long start = seeds.get(i);
             long end = seeds.get(i+1) + start -1;
+            String[] range = {start+","+end};
 
-            for( long s = start; s < end; s++) {
-                playTheGame(0, s);
-            }
+            var minLocation = Arrays.stream(range).flatMapToLong(r -> {
+                String[] rs = r.split(",");
+                return LongStream.range(Long.parseLong(rs[0]), Long.parseLong(rs[1]));
+            }).parallel().map(nr -> {
+                //System.out.println("Handling: " + nr);
+                playTheGame(0, nr);
+                return 1;
+            }).min().orElseThrow();
+            System.out.println("minLocation " + minLocation);
         }
         System.out.println("Day5 B= "+ lowestValue);
 
         return "Day5 ";
     }
 }
-
-

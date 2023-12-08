@@ -29,5 +29,9 @@ class Main {
         Day6 day6 = new Day6();
         day6.getAnswerPartOne();
         day6.getAnswerPartTwo();
+
+        Day7 day7 = new Day7();
+        day7.getAnswerPartOne();
+        day7.getAnswerPartTwo();
     }
 }
