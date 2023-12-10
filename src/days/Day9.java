@@ -51,7 +51,6 @@ public class Day9 extends Day {
         return value;
     }
 
-
     @Override
     public String getAnswerPartTwo() throws Exception {
 
