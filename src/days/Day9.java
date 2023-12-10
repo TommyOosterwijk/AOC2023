@@ -24,22 +24,15 @@ public class Day9 extends Day {
         allFirstDiffs.add(longInput.getFirst());
         allLastDiffs.add(longInput.getLast());
 
-        while(!allZeroDiff) {
+        while(!longInput.stream().allMatch(Long.valueOf(0L)::equals)) {
 
-            allZeroDiff = true;
             List<Long> newDiffSize = new ArrayList<>();
-
             for( int i = 0; i < longInput.size()-1; i++) {
-                long diff = longInput.get(i+1) - longInput.get(i);
-                newDiffSize.add(diff);
-                if (diff != 0) {
-                    allZeroDiff = false;
-                }
+                newDiffSize.add(longInput.get(i+1) - longInput.get(i));
             }
             allLastDiffs.add(newDiffSize.getLast());
             allFirstDiffs.add(newDiffSize.getFirst());
             longInput = new ArrayList<>(newDiffSize);
-
         }
         if (isA)
             return allLastDiffs.stream().collect(Collectors.summingLong(Long::longValue));
