@@ -12,7 +12,6 @@ public class Day8 extends Day {
     List<Element> map = new ArrayList();
     int index = 0;
     String instructions = "";
-
     public Day8() throws FileNotFoundException {
         var lines = OwnReader.getReaderFromPath("day08.txt").lines().toList();
         instructions = lines.get(0);
@@ -83,7 +82,6 @@ public class Day8 extends Day {
                 indexes.add(i);
             }
         }
-
         System.out.println(indexes);
 
         for( int i2 = 0; i2 < indexes.size(); i2++) {
@@ -118,7 +116,8 @@ public class Day8 extends Day {
             r = lcm(r, indexes.get(i));
         }
 
-        System.out.println("Day8 B= " + r);
+        Hand hand = new Hand("test", "tesst");
+        System.out.println("Day8 B= " + hand);
         return "Day8 B= " + r;
     }
 
@@ -136,6 +135,9 @@ public class Day8 extends Day {
         }
         return lcm;
     }
+
+    record Hand(String cards, String type) { }
+
 
     class Element {
 
