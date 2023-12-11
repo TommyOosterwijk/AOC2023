@@ -11,23 +11,12 @@ import java.util.Map;
 
 public class Day10 extends Day {
 
-    int[][] yo =
-            {
-                    {-2,0},
-                    {0,-2}, {0,2},
-                    {2,0}
-            };
+    int[][] yo = {{-2,0}, {0,-2}, {0,2}, {2,0}};
 
-    int[][] neighbourEmptyCheck =
-            {
-                    {-1,-1},{-1,0},{-1,1},
-                    {0,-1}, {0,1},
-                    {+1,-1},{+1,0},{+1,1},
-            };
+    int[][] neighbourEmptyCheck = { {-1,-1},{-1,0},{-1,1}, {0,-1}, {0,1}, {+1,-1},{+1,0},{+1,1},};
     Pipe[][] grid;
     String[][] secondGrid;
     Point startingLocation = new Point();
-
     List<Point> tempPosMarked = new ArrayList();
     List<Point> finalPosMarked = new ArrayList<>();
 
@@ -47,7 +36,6 @@ public class Day10 extends Day {
         List<String> lines = OwnReader.getReaderFromPath("day10.txt").lines().toList();
         maxY = lines.size() * 2;
         maxX = lines.getFirst().length() * 2;
-
         grid = new Pipe[maxY][maxX];
 
         for( int y = 0; y < maxY/2; y++) {
@@ -70,25 +58,20 @@ public class Day10 extends Day {
     }
     @Override
     public String getAnswerPartOne() throws Exception {
-
         long result = 0;
-
         for (int i = 0; i < yo.length; i++) {
             long steps = startRoute(new Point(startingLocation.x+ yo[i][0], startingLocation.y + yo[i][1]), startingLocation, 1);
-
             if(steps > result) {
                 result = steps;
             }
         }
-
         System.out.println("Day10 A= " + result/2);
         return "Day10 A= " + 0;
     }
+
     @Override
     public String getAnswerPartTwo() throws Exception {
-
         long result = 0;
-
         for (int i = 0; i < yo.length; i++) {
             long steps = startRoute(new Point(startingLocation.x+ yo[i][0], startingLocation.y + yo[i][1]), startingLocation, 1);
 
@@ -98,7 +81,6 @@ public class Day10 extends Day {
             }
             finalPosMarked.add(startingLocation);
         }
-
         secondGrid = new String[maxY][maxX];
 
         for (int y = 0; y < maxY; y++) {
@@ -158,13 +140,10 @@ public class Day10 extends Day {
             if ((self.y < 0 || self.y >= maxY) || (self.x < 0 || self.x >= maxX)) {
                 return 0;
             }
-
             Pipe currentPipe = grid[self.y][self.x];
-
             if (currentPipe.id.equals("S")) {
                 return stepCounter;
             }
-
             if (currentPipe.isConnected(previous)) {
                 int extraY = self.y;
                 int extraX = self.x;
@@ -206,10 +185,8 @@ public class Day10 extends Day {
                 return n2;
             }
         }
-
         boolean isSameLocation(Point a, Point b) {
             return a.x == b.x && a.y == b.y;
         }
-
     }
 }
