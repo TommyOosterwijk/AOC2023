@@ -41,5 +41,9 @@ class Main {
         Day9 day9 = new Day9();
         day9.getAnswerPartOne();
         day9.getAnswerPartTwo();
+
+        Day10 day10 = new Day10();
+        day10.getAnswerPartOne();
+        day10.getAnswerPartTwo();
     }
 }
