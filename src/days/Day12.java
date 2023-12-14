@@ -36,7 +36,6 @@ public class Day12 extends Day {
         for( int i = 0; i < input.size(); i++) {
             String targetString = input.get(i);
             long result = findSolution(targetString, inputValues.get(i));
-            System.out.println("Row " + i + " = " + result);
             answer+= result;
         }
 
