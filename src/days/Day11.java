@@ -122,4 +122,3 @@ public class Day11 extends Day {
         int xStepWeight = 1;
     }
 }
-
