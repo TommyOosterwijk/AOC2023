@@ -65,5 +65,13 @@ class Main {
         Day15 day15 = new Day15();
         day15.getAnswerPartOne();
         day15.getAnswerPartTwo();
+
+        Day16 day16 = new Day16();
+        day16.getAnswerPartOne();
+        day16.getAnswerPartTwo();
+
+        Day17 day17 = new Day17();
+        day17.getAnswerPartOne();
+        day17.getAnswerPartTwo();
     }
 }
