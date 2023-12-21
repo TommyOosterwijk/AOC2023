@@ -72,6 +72,10 @@ class Main {
 
         Day17 day17 = new Day17();
         day17.getAnswerPartOne();
-        day17.getAnswerPartTwo();
+        //day17.getAnswerPartTwo();
+
+        Day18Take2 day18 = new Day18Take2();
+        day18.getAnswerPartOne();
+        day18.getAnswerPartTwo();
     }
 }
