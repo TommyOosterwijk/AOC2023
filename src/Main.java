@@ -5,7 +5,7 @@ class Main {
         System.out.println("AOE2 023");
         System.out.println("Java21 features, lets go.");
 
-        Day1 day1 = new Day1();
+        /*Day1 day1 = new Day1();
         day1.getAnswerPartOne();
         day1.getAnswerPartTwo();
 
@@ -77,5 +77,24 @@ class Main {
         Day18Take2 day18 = new Day18Take2();
         day18.getAnswerPartOne();
         day18.getAnswerPartTwo();
+*/
+        Day19 day19 = new Day19();
+        //day19.getAnswerPartOne();
+        //day19.getAnswerPartTwo();
+
+        Day20 day20 = new Day20();
+        //day20.getAnswerPartOne();
+        day20 = new Day20();
+        //day20.getAnswerPartTwo();
+
+        Day21 day21 = new Day21();
+        //day21.getAnswerPartOne();
+
+        Day22 day22 = new Day22();
+        //day22.getAnswerPartOne();
+
+        Day23 day23 = new Day23();
+        day23.getAnswerPartOne();
+        day23.getAnswerPartTwo();
     }
 }
